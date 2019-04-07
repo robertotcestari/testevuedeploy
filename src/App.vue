@@ -8,16 +8,25 @@
     >Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam deleniti sed iste ad quos iusto hic delectus, repudiandae a enim eligendi magni nihil mollitia, amet dicta ea illum quia voluptates.</p>
 
     <img src="./assets/img/beto.png" alt>
+
+    <Postsmari/>
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import Postsmari from "./components/Postsmari.vue";
+
+import Axios from "axios";
+Axios.get("https://jsonplaceholder.typicode.com/posts").then(data => {
+  console.log(data);
+});
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    HelloWorld,
+    Postsmari
   }
 };
 </script>
